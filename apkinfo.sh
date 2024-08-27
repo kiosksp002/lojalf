@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 STRLINE=`aapt dump badging $1 | grep "^package:" | cut -d" " -f2,3`
 
 HASHCOD=`md5sum $1 | cut -d" " -f1`
@@ -10,7 +11,8 @@ FILENAM=`basename $1`
 #########
 read -p "Deseja copiar e carregar apk ? [N/y] " yn
 case $yn in
-	[Yy]* ) 
+	[Yy]* )
+		cd $DIR;
 		. gitsetup.sh;
 		cp $1 $FILENAM;
 		git add -A;
