@@ -29,7 +29,7 @@ echo "FHASH='$HASHCOD'"
 echo "PKGN='$PKGNAME'"
 echo "VC='$VERCODE'"
 echo "data['link']='https://github.com/kiosksp002/lojalf/raw/main/$FILENAM'"
-					
+echo "data['hash']='$HASHCOD'"					
 
 
 echo
